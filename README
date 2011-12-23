@@ -49,3 +49,16 @@ step 11
 		- git pull
 		- git remote prune origin		# remove tracking of deleted remote branches - story_y 
 		- git branch -d story_y			# delete local branch story_y
+===============
+step 17 (scenario when master is changed before pull request for story_x is completed)
+1st user	- git checkout master
+		- git checkout -b hotfix_a		# create new branch - hotfix
+		- update README
+		- git commit -a -v
+		- git push origin hotfix_a
+		- pull request to merge to master
+		- approved
+		- merged and closed
+		- git checkout master
+		- git branch -d hotfix_a
+		- git push origin :hotfix_a
