@@ -45,7 +45,7 @@ step 11
 		- git branch -d story_y
 		- git push origin :story_y
 ======
-1st user	- git fetch
-		- git remote prune origin
-		- git checkout story_x
-		- git branch -d story_y
+1st user	- git checkout master
+		- git pull
+		- git remote prune origin		# remove tracking of deleted remote branches - story_y 
+		- git branch -d story_y			# delete local branch story_y
