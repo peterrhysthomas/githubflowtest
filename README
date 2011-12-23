@@ -50,3 +50,7 @@ step 12(conflict scenario - README on master has been changed)
 		- git pull
 		- edit README
 		- commit -a -m 'update README - step 12/user_yyy'
+		- git checkout master
+		- git pull
+		- git checkout story_x
+		- git merge master
