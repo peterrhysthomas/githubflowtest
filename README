@@ -145,3 +145,7 @@ step 18
 		- git push origin story_x
 		- create tag for release
 		- delete local & remote story_x branch
+===============
+step 19
+2nd user	- git tag "v1.0"
+		- git push --tags
