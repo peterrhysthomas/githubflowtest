@@ -21,3 +21,8 @@ step 7
 		- git add README
 		- git commit -v
 		- git push origin story_y
+
+step 9
+2nd user	- vi story_y
+		- git add story_y
+		- git commit -a -m 'add story_y'
