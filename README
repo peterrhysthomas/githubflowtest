@@ -13,3 +13,11 @@ step 2
   		- git config --list
 		- git commit -a -m "update README"
 		- git push origin master
+step 7
+2nd user	- git branch
+		- git checkout master
+		- git checkout -b story_y
+		- update README
+		- git add README
+		- git commit -v
+		- git push origin story_y
