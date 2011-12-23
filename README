@@ -13,3 +13,30 @@ step 2
   		- git config --list
 		- git commit -a -m "update README"
 		- git push origin master
+step 7
+2nd user	- git branch
+		- git checkout master
+		- git checkout -b story_y
+		- update README
+		- git add README
+		- git commit -v
+		- git push origin story_y
+		- git branch --set-upstream story_y origin/story_y
+
+step 9
+2nd user	- vi story_y
+		- git add story_y
+		- git commit -a -m 'add story_y'
+
+step 10
+1st user	- git checkout story_y
+		- git pull
+		- update README
+		- update story_y.txt
+		- git commit -a -m 'add changes for story y'
+		- git push origin story_y
+		- do pull request on github
+======
+2nd user	- reviews pull request
+		- approves
+		- does the merge and closes the pull request
