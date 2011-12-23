@@ -35,3 +35,10 @@ step 6
 1st user	- git pull
 		- resolve conflicts on README (step5 added by both users)
 		- git commit -a -m 'conflict fixed'
+		- git status
+		- git diff
+		- git log
+		- git commit -a -m 'update README for step 6'
+		- git push origin story_x
+		- git fetch
+		- git checkout story_y
