@@ -13,3 +13,12 @@ step 2
   		- git config --list
 		- git commit -a -m "update README"
 		- git push origin master
+
+step 3
+1st user	- git pull
+
+step 4
+1st user	- git checkout -b story_x
+		- git add story_x.txt
+		- git commit -a -m "add a change for story_x"
+		- git push origin story_x
