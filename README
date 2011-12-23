@@ -89,3 +89,8 @@ step 12(conflict scenario - README on master has been changed)
                 - git pull
                 - git checkout story_x
                 - git merge master
+===============
+step 13
+2nd user	- fix conflicts
+		- git commit -v
+		- git push origin story_x
