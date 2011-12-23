@@ -96,5 +96,30 @@ step 12(conflict scenario - README on master has been changed)
 ===============
 step 13
 2nd user	- fix conflicts
-		- git commit -v
+		- git commit -a -v
 		- git push origin story_x
+===============
+step 14
+1st user	- git pull		# gets updates made by user_yyy
+		- resolve conflicts
+		- git commit -a -v
+		- git push origin story_x
+		- request pull request
+===============
+step 15
+2nd user
+		- git pull
+		- review pull request
+		- approve changes
+		- merge and close pull request
+		- git checkout master
+		- git branch -d story_x			# delete local branch story_x
+		- git push origin :story_x		# delete remote branch
+		- git remote show origin
+===============
+step 16
+1st user	- git checkout master
+		- git pull
+		- git remote prune origin
+		- git branch -d story_x
+		- git remote show origin
