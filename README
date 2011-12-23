@@ -22,3 +22,6 @@ step 4
 		- git add story_x.txt
 		- git commit -a -m "add a change for story_x"
 		- git push origin story_x
+
+step 5
+1st user	- git branch --set-upstream story_x origin/story_x	#for remote pull
