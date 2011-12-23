@@ -40,5 +40,7 @@ step 6
 		- git log
 		- git commit -a -m 'update README for step 6'
 		- git push origin story_x
-		- git fetch
+	
+step 8
+1st user 	- git fetch
 		- git checkout story_y
