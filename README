@@ -39,4 +39,13 @@ step 10
 ======
 2nd user	- reviews pull request
 		- approves
-		- does the merge and closes the pull request
+		- does the merge and closes the pull requestA
+step 11
+2nd user	- git checkout master
+		- git branch -d story_y
+		- git push origin :story_y
+======
+1st user	- git fetch
+		- git remote prune origin
+		- git checkout story_x
+		- git branch -d story_y
