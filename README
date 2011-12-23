@@ -22,3 +22,9 @@ step 4
 		- git add story_x.txt
 		- git commit -a -m "add a change for story_x"
 		- git push origin story_x
+
+step 5
+2nd user	- git fetch
+		- git checkout story_x		# will track remote branch story_x
+		- git commit stuff
+		- git push origin story_x
