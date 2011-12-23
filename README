@@ -136,3 +136,12 @@ step 17 (scenario when master is changed before pull request for story_x is comp
 		- git checkout master
 		- git branch -d hotfix_a
 		- git push origin :hotfix_a
+===============
+step 18
+2nd user	- update master
+		- git merge master
+		- edit conflicts
+		- git commit -a -v 'updated story x with latest changes from master'
+		- git push origin story_x
+		- create tag for release
+		- delete local & remote story_x branch
