@@ -44,3 +44,9 @@ step 6
 step 8
 1st user 	- git fetch
 		- git checkout story_y
+
+step 12(conflict scenario)
+1st user	- git checkout story_x
+		- git pull
+		- edit README
+		- git commit -a -m 'update README - step 12/user_xxx'
