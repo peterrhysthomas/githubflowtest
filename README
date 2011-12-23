@@ -5,7 +5,7 @@ step 1
 		- git commit stuff
 		- git remote add origin git@github.com:user_xxx/repo.git
 		- git push -u origin master
-
+===============
 step 2
 2nd user	- git clone git@github.com:user_xxx/repo.git
 		- git config --global user.name "user_yyy"
@@ -13,6 +13,33 @@ step 2
   		- git config --list
 		- git commit -a -m "update README"
 		- git push origin master
+===============
+step 3
+1st user	- git pull
+===============
+step 4
+1st user	- git checkout -b story_x
+		- git add story_x.txt
+		- git commit -a -m "add a change for story_x"
+		- git push origin story_x
+===============
+step 5
+1st user	- git branch --set-upstream story_x origin/story_x	#for remote pull
+2nd user	- git fetch
+		- git checkout story_x		# will track remote branch story_x
+		- git commit stuff
+		- git push origin story_x
+===============
+step 6
+1st user	- git pull
+		- resolve conflicts on README (step5 added by both users)
+		- git commit -a -m 'conflict fixed'
+		- git status
+		- git diff
+		- git log
+		- git commit -a -m 'update README for step 6'
+		- git push origin story_x
+===============
 step 7
 2nd user	- git branch
 		- git checkout master
@@ -22,12 +49,16 @@ step 7
 		- git commit -v
 		- git push origin story_y
 		- git branch --set-upstream story_y origin/story_y
-
+===============
+step 8
+1st user 	- git fetch
+		- git checkout story_y
+===============
 step 9
 2nd user	- vi story_y
 		- git add story_y
 		- git commit -a -m 'add story_y'
-
+===============
 step 10
 1st user	- git checkout story_y
 		- git pull
@@ -36,19 +67,62 @@ step 10
 		- git commit -a -m 'add changes for story y'
 		- git push origin story_y
 		- do pull request on github
-======
 2nd user	- reviews pull request
 		- approves
 		- does the merge and closes the pull requestA
+===============
 step 11
 2nd user	- git checkout master
 		- git branch -d story_y
 		- git push origin :story_y
-======
 1st user	- git checkout master
 		- git pull
 		- git remote prune origin		# remove tracking of deleted remote branches - story_y 
 		- git branch -d story_y			# delete local branch story_y
+===============
+step 12(conflict scenario - README on master has been changed)
+2nd user        - git checkout story_x
+                - git pull
+                - edit README
+                - commit -a -m 'update README - step 12/user_yyy'
+                - git checkout master
+                - git pull
+                - git checkout story_x
+                - git merge master
+1st user        - git checkout story_x
+                - git pull
+                - edit README
+                - git commit -a -m 'update README - step 12/user_xxx'
+===============
+step 13
+2nd user	- fix conflicts
+		- git commit -a -v
+		- git push origin story_x
+===============
+step 14
+1st user	- git pull		# gets updates made by user_yyy
+		- resolve conflicts
+		- git commit -a -v
+		- git push origin story_x
+		- request pull request
+===============
+step 15
+2nd user
+		- git pull
+		- review pull request
+		- approve changes
+		- merge and close pull request
+		- git checkout master
+		- git branch -d story_x			# delete local branch story_x
+		- git push origin :story_x		# delete remote branch
+		- git remote show origin
+===============
+step 16
+1st user	- git checkout master
+		- git pull
+		- git remote prune origin
+		- git branch -d story_x
+		- git remote show origin
 ===============
 step 17 (scenario when master is changed before pull request for story_x is completed)
 1st user	- git checkout master
@@ -62,3 +136,12 @@ step 17 (scenario when master is changed before pull request for story_x is comp
 		- git checkout master
 		- git branch -d hotfix_a
 		- git push origin :hotfix_a
+===============
+step 18
+2nd user	- update master
+		- git merge master
+		- edit conflicts
+		- git commit -a -v 'updated story x with latest changes from master'
+		- git push origin story_x
+		- create tag for release
+		- delete local & remote story_x branch
