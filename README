@@ -3,5 +3,13 @@ step 1
 		- mkdir repo
 		- git init
 		- git commit stuff
-		- git remote add origin git@github.com:xxx/repo.git
+		- git remote add origin git@github.com:user_xxx/repo.git
 		- git push -u origin master
+
+step 2
+2nd user	- git clone git@github.com:user_xxx/repo.git
+		- git config --global user.name "user_yyy"
+  		- git config --global user.email "user_yyy@mail.com"
+  		- git config --list
+		- git commit -a -m "update README"
+		- git push origin master
