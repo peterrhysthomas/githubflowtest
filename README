@@ -1,0 +1,7 @@
+step 1
+1st user	- create repo on github
+		- mkdir repo
+		- git init
+		- git commit stuff
+		- git remote add origin git@github.com:xxx/repo.git
+		- git push -u origin master
