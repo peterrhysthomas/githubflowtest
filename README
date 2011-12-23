@@ -21,6 +21,7 @@ step 7
 		- git add README
 		- git commit -v
 		- git push origin story_y
+		- git branch --set-upstream story_y origin/story_y
 
 step 9
 2nd user	- vi story_y
