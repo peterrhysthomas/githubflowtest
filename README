@@ -1,3 +1,15 @@
+resources
+- neo pdfs
+- http://www.eecs.harvard.edu/~cduan/technical/git/
+- peep code book
+- http://help.github.com/git-cheat-sheets/
+- free screencasts - http://gitcasts.com/
+
+
+===================================================================================================
+step by step
+===================================================================================================
+
 step 1
 1st user	- create repo on github
 		- mkdir repo
